@@ -12,8 +12,5 @@ echo start local heroku server
 heroku local web
 else
 heroku run bash  
-# heroku run rails c 
-# AmazonFba.find_by(shipment_id: $ )
-#AmazonFba.where(netsuite_status: false)
 fi
 exit
