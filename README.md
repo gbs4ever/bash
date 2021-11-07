@@ -5,7 +5,12 @@ Enjoy this repo  :smile: :smiley: :smiley:
 The repo contains my bahs script to speed up dev work I work on a windows platofrm with WSL so many times my postgress server needs to be rebooted.
 
 * `.aliases` contains bash aliases
-* `load.sh` if you work on wsl syastem linux system will  disconnect the postgress server somtimes 
+* `load.sh` if you work on wsl system the linux subsystem will  disconnect the postgress server (somtimes) 
 
+To use these download the repo into your root directory and then add the following to the bottom of your ~/.bashrc (~/.bash_profile on mac):
 
+```bash 
+for file in ~/bash/.*.sh
+do source $file
+done
 
