@@ -1,7 +1,8 @@
 alias vpn="globalprotect"
 alias please="sudo "
 alias remove="rm -rf "
-
+alias linuxdev = "cd ~/dev"
+alias linuxfiles = "ls ~/dev"
 mk() {
 	mkdir $1 && cd $1
 }
@@ -34,4 +35,6 @@ list_shortcuts(){
 echo "gclone"
 echo "mk"
 echo "load"
+echo "linuxfiles"
+alias "linuxdev"
 }
