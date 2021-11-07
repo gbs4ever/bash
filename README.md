@@ -20,4 +20,16 @@ Then copy this and add the bottom of you bashrc.
 for file in ~/bash/.*.sh
 do source $file
 done
+```
+If you want to keep this repo updated locally dont forget 
+```git pull```
 
+<br>
+<br>
+ <h2>Simcha Greenbaum</h2>
+ <br>
+				<span>
+					© All rights are reserved  2021 Made with
+					<span aria-label="love" role="img">
+						💖
+					</span>
