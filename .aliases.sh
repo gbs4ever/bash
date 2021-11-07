@@ -3,7 +3,7 @@ alias please="sudo "
 alias remove="rm -rf "
 alias linuxdev="cd ~/dev"
 alias linuxfiles="ls ~/dev"
-alias update="cd ~/bash && git pull"
+alias updatebash="cd ~/bash && git pull"
 mk() {
 	mkdir $1 && cd $1
 }
