@@ -36,5 +36,5 @@ echo "gclone"
 echo "mk"
 echo "load"
 echo "linuxfiles"
-alias "linuxdev"
+echo "linuxdev"
 }
