@@ -7,7 +7,11 @@ The repo contains my bahs script to speed up dev work I work on a windows platof
 * `.aliases` contains bash aliases
 * `load.sh` if you work on wsl system the linux subsystem will  disconnect the postgress server (somtimes) 
 
-To use these download the repo into your root directory and then add the following to the bottom of your ~/.bashrc (~/.bash_profile on mac):
+To use these download the repo into your root directory  (~/.bash_profile on mac)
+
+```nano ~/.bashrc```
+
+Then copy this and add the bottom of you bashrc.
 
 ```bash 
 for file in ~/bash/.*.sh
