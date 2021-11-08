@@ -4,6 +4,8 @@ alias remove="rm -rf "
 alias linuxdev="cd ~/dev"
 alias linuxfiles="ls ~/dev"
 alias update-bash="cd ~/bash && git pull"
+alias gh='history|grep
+alias cg='cd `git rev-parse --show-toplevel`'
 mk() {
 	mkdir $1 && cd $1
 }
