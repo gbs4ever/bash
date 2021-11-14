@@ -1,0 +1,5 @@
+  dc = diff --cached
+  cm = commit
+  cp = cherry-pick
+  logv = log --pretty=fuller
+  undo-commit = reset --soft HEAD^
