@@ -1,4 +1,4 @@
-need to add synitax to check if installed then intall if not switch to .sh file later
+need to add syntax to check if installed then intall if not switch to .sh file later
 
 sudo apt-get install fzf
 sudo apt-get install fd-find
