@@ -27,18 +27,39 @@ function gbt() {
   git checkout -b $1 --track origin/$1
 }
 
-# make a gif out of the last recorded video
-function makegif() {
-  # make sure to include trailing slash
-  # TODO we should be able to determine the default SS directly automatically
-  screenshot_dir=~/Desktop/
-
-  latest_movie=$screenshot_dir`/bin/ls -tp "$screenshot_dir" | grep '.*\.mov' | head -n 1`
-  gif_destination=`echo "$latest_movie" | sed 's/.mov/.gif/'`
-
-  # `brew install ffmpeg gifsicle`
-  ffmpeg -i "$latest_movie" -r 10 -f gif - | gifsicle > "$gif_destination"
-
-  echo $gif_destination
-  open -a "Google Chrome" "$gif_destination"
+mk() {
+	mkdir $1 && cd $1
 }
+
+gclone() {
+	git clone "$1" && cd "$(basename "$1" .git)"
+}
+load(){
+#!/bin/bash
+echo rails server loads
+echo please enter a cmd "(ps/local)"
+read VAR
+if [[ $VAR == "ps" ]];
+then 
+echo restating postgress server
+sudo service postgresql restart
+elif [[ $VAr == "local" ]];
+then
+echo start local heroku server
+heroku local web
+else
+heroku run bash  
+fi
+exit
+
+
+}
+
+list_shortcuts(){
+echo "gclone"
+echo "mk"
+echo "load"
+echo "linuxfiles"
+echo "linuxdev"
+}
+
