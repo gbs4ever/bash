@@ -3,6 +3,8 @@ function touchp() {
 }
 function update_bash(){
   PWD=$(pwd)
+  echo $PWD
+  
   cd ~/bash && git pull
   cd $PWD
 }
