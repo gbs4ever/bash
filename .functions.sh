@@ -2,11 +2,10 @@ function touchp() {
   mkdir -p $(dirname $1) && touch "$1"
 }
 function update_bash(){
-  PWD=$(pwd)
-  echo $PWD
-  
+  dir_pwd=$(pwd)
+  echo "$dir_pwd"
   cd ~/bash && git pull
-  cd $PWD
+  cd "$dir_pwd"
 }
 # All the dig info
 function digga() {
