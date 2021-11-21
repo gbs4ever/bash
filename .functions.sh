@@ -2,9 +2,9 @@ function touchp() {
   mkdir -p $(dirname $1) && touch "$1"
 }
 function update_bash(){
-  current_dir=$(pwd)
+  pwd=$(pwd)
   cd ~/bash && git pull
-  cd current_dir
+  cd pwd
 }
 # All the dig info
 function digga() {
