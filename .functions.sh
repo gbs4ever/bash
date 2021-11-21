@@ -1,7 +1,11 @@
 function touchp() {
   mkdir -p $(dirname $1) && touch "$1"
 }
-
+function update_bash(){
+  current_dir=$(pwd)
+  cd ~/bash && git pull
+  cd current_dir
+}
 # All the dig info
 function digga() {
   dig +nocmd "$1" any +multiline +noall +answer
