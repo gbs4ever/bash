@@ -1,6 +1,14 @@
 function touchp() {
   mkdir -p $(dirname $1) && touch "$1"
 }
+
+function run_within_dir(){
+  dir_pwd=$(pwd)
+  cd $1 && $2
+  cd "$dir_pwd"
+}
+
+
 function update_bash(){
   dir_pwd=$(pwd)
   cd ~/bash && git pull
