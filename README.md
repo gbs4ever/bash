@@ -22,7 +22,7 @@ do source $file
 done
 ```
 If you want to keep this repo updated locally dont forget 
-```git pull``` or just keyword ```update-bash``` in bash
+```git pull``` or just keyword ```update_bash``` in bash
 
 <br>
 <br>
