@@ -1,0 +1,1 @@
+alias hcon=heroku run rails c
