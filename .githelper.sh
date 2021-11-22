@@ -1,1 +1,1 @@
-alias clean="git ls-files -m| xargs rubocop"
+alias clean="git ls-files -m| xargs -r rubocop"

@@ -1,1 +1,1 @@
-alias hcon=heroku run rails c
+alias hcon="heroku run rails c"
