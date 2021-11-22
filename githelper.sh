@@ -1,0 +1,1 @@
+alias clean=git ls-files -m| xargs rubocop
