@@ -46,4 +46,3 @@ main() {
   set_local_bin_path
   configure_locale
 }
-echo "To upload file enter main "
