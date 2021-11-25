@@ -28,9 +28,7 @@ function digga() {
 # git functions
 # most pulled from https://github.com/ignu/dotfiles
 
-function gc() {
-  git commit -v -a -m "$*"
-}
+
 
 function gd() {
   git difftool $1 -t Kaleidoscope -y
@@ -80,4 +78,16 @@ echo "load"
 echo "linuxfiles"
 echo "linuxdev"
 }
-
+function cltest(){
+  echo "To run rubocop with auto correct type -A or just hit enter " 
+  read VAR
+  if [[ $VAR == "-A" ]];
+  then
+  echo "auto correcting"
+  clean -A
+  else
+  echo "rubcopout out put"
+  clean
+  fi
+  echo "Now running rspec test ....."
+rspec}  
