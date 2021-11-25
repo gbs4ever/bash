@@ -13,7 +13,7 @@ function cltest(){
   echo "auto correcting"
   clean -A
   else
-  echo "rubcopout put"
+  echo "rubcopout out put"
   clean
   fi
   echo "Now running rspec test ....."
