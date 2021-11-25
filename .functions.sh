@@ -90,4 +90,6 @@ function cltest(){
   clean
   fi
   echo "Now running rspec test ....."
-rspec}  
+rspec
+
+}  
