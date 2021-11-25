@@ -4,16 +4,18 @@ alias gp="g push origin HEAD"
 
 
 function cltest(){
-  echo "to run rubocop type -A" 
+  echo "To run rubocop with auto correct type -A or just hit enter " 
   read VAR
   if [[ $VAR == "-A" ]];
   then
+  echo "auto correcting"
   clean -A
   else
+  echo "rubcopout put"
   clean
   fi
-  echo "no running rspec then rspec....."
+  echo "Now running rspec test ....."
 rspec 
-exit
+
 }  
 
