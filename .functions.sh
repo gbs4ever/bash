@@ -66,9 +66,6 @@ heroku local web
 else
 heroku run bash  
 fi
-exit
-
-
 }
 
 list_shortcuts(){
