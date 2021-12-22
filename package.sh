@@ -44,7 +44,3 @@ set_local_bin_path() {
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
   logger "exported local bin path variable to ~/.bashrc"
 }
- getubuntu(){
-   echo "update packages"
-   sudo apt update && sudo apt upgrade -y
- }

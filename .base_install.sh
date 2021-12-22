@@ -34,6 +34,7 @@ configure_locale() {
   logger "exported locale variables to ~/.bashrc"
 }
 upgrade (){
+  echo "update packages"
   sudo apt update && sudo apt upgrade -y
 }
 # to do add time zone configure (set to UTC always)
