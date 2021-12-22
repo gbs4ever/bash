@@ -33,7 +33,9 @@ configure_locale() {
   echo 'export LC_ALL="en_US.UTF-8"' >> ~/.bashrc
   logger "exported locale variables to ~/.bashrc"
 }
-
+upgrade (){
+  sudo apt update && sudo apt upgrade -y
+}
 # to do add time zone configure (set to UTC always)
 # UTC it's a default time and should be by default on any server
 
