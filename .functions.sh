@@ -30,26 +30,13 @@ function digga() {
 
 
 
-function gd() {
-  git difftool $1 -t Kaleidoscope -y
-}
 
-# this caused strange terminal input glitches when written as an alias
-function gcb() {
-  git checkout $(git branch --sort=-committerdate --format="%(refname:short)" | fzf)
-}
-
-function gbt() {
-  git checkout -b $1 --track origin/$1
-}
 
 mk() {
 	mkdir $1 && cd $1
 }
 
-gclone() {
-	git clone "$1" && cd "$(basename "$1" .git)"
-}
+
 load(){
 #!/bin/bash
 echo rails server loads
