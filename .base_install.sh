@@ -34,8 +34,9 @@ configure_locale() {
   logger "exported locale variables to ~/.bashrc"
 }
 upgrade (){
-  echo "update packages"
+  echo "Linux package are being updated .............. "
   sudo apt update && sudo apt upgrade -y
+  echo "updater closing ......"
 }
 # to do add time zone configure (set to UTC always)
 # UTC it's a default time and should be by default on any server
