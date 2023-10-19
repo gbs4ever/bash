@@ -36,7 +36,7 @@ configure_locale() {
 upgrade (){
   echo "Linux package are being updated .............. "
   sudo apt update && sudo apt upgrade -y
-  echo "updater closing ......"
+  echo "Updater closing ............"
 }
 # to do add time zone configure (set to UTC always)
 # UTC it's a default time and should be by default on any server

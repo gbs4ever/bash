@@ -1,0 +1,10 @@
+#!/bin/bash
+function createNS() {
+suitecloud project:create -i
+cd $1
+suitecloud account:setup
+suitecloud file:import -i
+suitecloud object:import -i
+suitecloud project:adddependencies
+suitecloud project:validate
+}
