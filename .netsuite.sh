@@ -8,3 +8,9 @@ suitecloud object:import -i
 suitecloud project:adddependencies
 suitecloud project:validate
 }
+
+# suitecloud aliases
+alias sc='suitecloud'
+alias scd='sc project:deploy'
+alias scv='sc project:validate --server'
+alias scas='sc account:setup'
