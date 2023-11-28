@@ -62,18 +62,19 @@ echo "load"
 echo "linuxfiles"
 echo "linuxdev"
 }
-function cltest(){
-  echo "To run rubocop with auto correct type -A or just hit enter " 
-  read VAR
-  if [[ $VAR == "-A" ]];
-  then
-  echo "auto correcting"
-  clean -A
-  else
-  echo "rubcopout out put"
-  clean
-  fi
-  echo "Now running rspec test ....."
-rspec
+# alias clean="rubocop"
+# function cltest(){
+#   echo "To run rubocop with auto correct type -A or just hit enter " 
+#   read VAR
+#   if [[ $VAR == "-A" ]];
+#   then
+#   echo "auto correcting"
+#   clean -A
+#   else
+#   echo "rubcopout out put"
+#   clean
+#   fi
+#   echo "Now running rspec test ....."
+# rspec
 
-}  
+# }  

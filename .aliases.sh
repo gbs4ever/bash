@@ -6,7 +6,7 @@ alias linuxfiles="ls ~/dev"
 alias fd="fdfind"
 alias rt="bundle exec rails test"
 alias b="bundle"
-alias clean="rubocop"
+
 
 
 
