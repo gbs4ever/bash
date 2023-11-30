@@ -13,4 +13,4 @@ suitecloud project:validate
 alias sc='suitecloud'
 alias scd='sc project:deploy'
 alias scv='sc project:validate --server'
-alias scas='sc account:setup'
+alias nsswitch='sc account:setup'
