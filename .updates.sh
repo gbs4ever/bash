@@ -1,7 +1,8 @@
 update_node(){
    echo "Linux package node  is being installed .............. "
   nvm install node
-  node-v
+  echo "double checking node version .... "
+  node -v
 }
 
 upgrade (){
