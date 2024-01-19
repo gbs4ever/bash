@@ -2,10 +2,12 @@
 Enjoy this repo  :smile: :smiley: :smiley:
 
 ## Contents
-The repo contains my bash script's to speed up my dev work.I work on a windows platform with WSL so many times my postgres server needs to be rebooted.
+The repo contains my bash script's to speed up my dev work. I work on a windows platform with WSL so many times my postgres server needs to be rebooted.
+`load.sh` if you work on wsl system the linux subsystem will  disconnect the postgressql server (sometimes) 
 
 * `.aliases` contains bash aliases
-* `load.sh` if you work on wsl system the linux subsystem will  disconnect the postgressql server (sometimes) 
+* `.heroku.sh`   contains heroku  aliases
+* `updates.sh`  functions to update diffrent gems/packages etc 
 
 To use these just  download the repo into your root directory  (~/.bash_profile on mac)
 For WSL users 
