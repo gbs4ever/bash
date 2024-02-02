@@ -25,7 +25,7 @@ gclone() {
 }
 
 gemupdate(){
-  echo "Running setup "
+  echo "updating gems running  && bundle update "
   bundle update
   rubocop -A
   git add Gemfile.lock  && git commit -m "bundle updated " && git push 
