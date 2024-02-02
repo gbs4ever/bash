@@ -19,10 +19,7 @@ sudo apt-get install curl
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 }
 
-rubyinstall(){
-rvm install 2.7.3
-rvm use 2.7.3 --default
-}
+
 node_nvm(){
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
   source ~/.bashrc

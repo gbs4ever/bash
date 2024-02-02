@@ -23,6 +23,10 @@ set_local_bin_path() {
   logger "exported local bin path variable to ~/.bashrc"
 }
 
+
+
+
+
 configure_locale() {
   logger "Configuring en_US.UTF-8 locale..."
   sudo locale-gen en_US.UTF-8
@@ -33,11 +37,7 @@ configure_locale() {
   echo 'export LC_ALL="en_US.UTF-8"' >> ~/.bashrc
   logger "exported locale variables to ~/.bashrc"
 }
-upgrade (){
-  echo "Linux package are being updated .............. "
-  sudo apt update && sudo apt upgrade -y
-  echo "Updater closing ............"
-}
+
 # to do add time zone configure (set to UTC always)
 # UTC it's a default time and should be by default on any server
 
