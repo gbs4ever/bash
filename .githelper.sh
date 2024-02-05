@@ -24,11 +24,5 @@ gclone() {
 	git clone "$1" && cd "$(basename "$1" .git)"
 }
 
-gemupdate(){
-  echo "updating gems running  && bundle update "
-  bundle update
-  rubocop -A
-  git add Gemfile.lock  && git commit -m "bundle updated " && git push 
-}
 
 
