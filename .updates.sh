@@ -12,10 +12,10 @@ upgrade (){
 }
 
 function gemupdate(){
-  echo "updating gems /// "
+  echo "updating gems  "
   echo "running bundle update ......"
   bundle update
-  echo "bundle closing ............"
+  echo "Bundle closing ............"
   rubocop -A
   git add Gemfile.lock  && git commit -m "bundle updated " && git push 
 }
