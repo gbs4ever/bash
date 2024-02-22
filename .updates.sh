@@ -33,15 +33,17 @@ function gemupdate() {
   # Run RuboCop
   echo "Running RuboCop..."
   rubocop -A
-
-  # Commit changes to Gemfile.lock with update output as part of the commit message
-  echo "Committing changes..."
-  git add Gemfile.lock
-  git commit -m "Update gems: $update_output"
+  if ! git diff --quiet --exit-code Gemfile.lock; then
+    # Commit changes to Gemfile.lock with update output as part of the commit message
+    echo "Committing changes..."
+    git add Gemfile.lock
+    git commit -m "Update gems: $update_output"
   
-  # Push changes to Git repository
-  echo "Pushing changes to Git repository..."
-  git push
+    # Push changes to Git repository
+    echo "Pushing changes to Git repository..."
+    git push
+  else
+    echo "No changes to commit."
+  fi
   
-  echo "Gem update process completed."
 }
