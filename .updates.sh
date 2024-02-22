@@ -43,7 +43,7 @@ function gemupdate() {
     echo "Pushing changes to Git repository..."
     git push
   else
-    echo "No changes to commit."
+    echo "No changes to commit, git exit "
   fi
   
 }
