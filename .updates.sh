@@ -30,10 +30,11 @@ function gemupdate() {
     return 1
   fi
 
-  # Run RuboCop
-  echo "Running RuboCop..."
-  rubocop -A
+
   if ! git diff --quiet --exit-code Gemfile.lock; then
+    # Run RuboCop
+    echo "Running RuboCop..."
+    rubocop -A
     # Commit changes to Gemfile.lock with update output as part of the commit message
     echo "Committing changes..."
     git add Gemfile.lock
