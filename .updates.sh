@@ -11,14 +11,14 @@ upgrade (){
   echo "Updater closing ............"
 }
 
-function gemupdate(){
-  echo "updating gems  "
-  echo "running bundle update ......"
-  bundle update
-  echo "Bundle closing ............"
-  rubocop -A
-  git add Gemfile.lock  && git commit -m "bundle updated " && git push 
-}
+# function gemupdate(){
+#   echo "updating gems  "
+#   echo "running bundle update ......"
+#   bundle update
+#   echo "Bundle closing ............"
+#   rubocop -A
+#   git add Gemfile.lock  && git commit -m "bundle updated " && git push 
+# }
 function gemupdate() {
   echo "Updating gems >>>"
   echo "running bundle update ........"
