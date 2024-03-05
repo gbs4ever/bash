@@ -38,7 +38,7 @@ function gemupdate() {
     # Commit changes to Gemfile.lock with update output as part of the commit message
     echo "Committing changes..."
     git add Gemfile.lock
-    git commit -m "Update gems: $update_output"
+    git commit -m "Update gems: ${update_output:0:50}"
   
     # Push changes to Git repository
     echo "Pushing changes to Git repository..."
