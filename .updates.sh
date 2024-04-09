@@ -5,21 +5,15 @@ update_node(){
   node -v
 }
 
-upgrade (){
+upgrade_linux (){
   echo "Linux package are being updated .............. "
   sudo apt update && sudo apt upgrade -y
   echo "Updater closing ............"
 }
 
-# function gemupdate(){
-#   echo "updating gems  "
-#   echo "running bundle update ......"
-#   bundle update
-#   echo "Bundle closing ............"
-#   rubocop -A
-#   git add Gemfile.lock  && git commit -m "bundle updated " && git push 
-# }
-function gemupdate() {
+
+### ruby gems update with bundler #####
+function gem_update() {
   echo "Updating gems >>>"
   echo "running bundle update ........"
   update_output=$(bundle update)
@@ -29,8 +23,6 @@ function gemupdate() {
     echo "Error: Bundle update failed."
     return 1
   fi
-
-
   if ! git diff --quiet --exit-code Gemfile.lock; then
     # Run RuboCop
     echo "Running RuboCop..."
@@ -38,7 +30,7 @@ function gemupdate() {
     # Commit changes to Gemfile.lock with update output as part of the commit message
     echo "Committing changes..."
     git add Gemfile.lock
-    git commit -m "Update gems: "${update_output: -50}""
+    git commit -m  "Update gems: ${update_output: -50}"
   
     # Push changes to Git repository
     echo "Pushing changes to Git repository..."

@@ -20,6 +20,11 @@ function ga() {
 function gbt() {
   git checkout -b $1 --track origin/$1
 }
+
+
+function gitsyncfork() {
+  git pull upstream master && git push 
+}
 gclone() {
 	git clone "$1" && cd "$(basename "$1" .git)"
 }
