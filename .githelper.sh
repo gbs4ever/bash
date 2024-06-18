@@ -21,6 +21,7 @@ function gbt() {
   git checkout -b $1 --track origin/$1
 }
 
+#git config --global alias.diffprev 'diff HEAD^'
 
 function gitsyncfork() {
   git pull upstream master && git push 

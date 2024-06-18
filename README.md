@@ -2,8 +2,8 @@
 Enjoy this repo  :smile: :smiley: :smiley:
 
 ## Contents
-The repo contains my bash script's to speed up my dev work. I work on a windows platform with WSL so many times my postgres server needs to be rebooted.
-if you work on wsl system the linux subsystem will  disconnect the postgressql server (sometimes) use `load`  command to restart the psql server . 
+The repo contains my bash script's to speed up my dev work. I work on a windows platform with WSL (linux subsystem) many times my postgres server needs to be rebooted.
+as the  subsystem will  disconnect the postgressql server  use `load`  command to restart the psql server . 
 
 * `.aliases` contains bash aliases
 * `.heroku.sh`   contains heroku  aliases
