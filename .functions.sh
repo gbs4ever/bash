@@ -63,16 +63,21 @@ echo "linuxfiles"
 echo "linuxdev"
 }
 rmv () {
-  if [ -e "$1" ]; then
+if [ -e "$1" ]; then
     read -r -p "Are you sure you want to remove '$1'? Type 'yes' to confirm: " response
     if [[ "$response" == "yes" ]]; then
+      if [ -d "$1" ]; then
+        /bin/rm -r "$1"
+        echo "Directory '$1' has been removed."
+      else
         /bin/rm "$1"
-        echo "'$1' has been removed."
+        echo "File '$1' has been removed."
+      fi
     else
-        echo "Operation canceled. '$1' was not removed."
+      echo "Operation canceled. '$1' was not removed."
     fi
   else
-    echo " Please provide a file to remove.  '$1' does not exist."
+    echo "Please provide a file or directory to remove , '$1' does not exist."
   fi
 }
 
