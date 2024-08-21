@@ -62,6 +62,24 @@ echo "load"
 echo "linuxfiles"
 echo "linuxdev"
 }
+rmv () {
+  if [ -e "$1" ]; then
+    read -r -p "Are you sure you want to remove '$1'? Type 'yes' to confirm: " response
+    if [[ "$response" == "yes" ]]; then
+        /bin/rm "$1"
+        echo "'$1' has been removed."
+    else
+        echo "Operation canceled. '$1' was not removed."
+    fi
+  else
+    echo " Please provide a file to remove.  '$1' does not exist."
+  fi
+}
+
+
+
+
+# confirm "$1"
 # alias clean="rubocop"
 # function cltest(){
 #   echo "To run rubocop with auto correct type -A or just hit enter " 
