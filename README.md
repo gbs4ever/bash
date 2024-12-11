@@ -11,9 +11,13 @@ as the  subsystem will  disconnect the postgressql server  use `load`  command t
 * `packages.sh`  functions to get linx based packages  etc 
 
 To use these just  download the repo into your root directory  (~/.bash_profile on mac)
-For WSL users 
 
 ```cd ~ && git clone   git@github.com:gbs4ever/bash.git``` 
+When you install Oh My Bash, it creates a new .bashrc file in your home directory, potentially overwriting the existing one. This means any custom configurations or environment variables you previously added might be lost. 
+
+
+
+Beware if you install oh my bash it  create a a new .bashrc  so you we need to re add this 
 
 ```nano ~/.bashrc```
 
