@@ -16,9 +16,14 @@ function update_current(){
 }
 
 function update_bash(){
+  GREEN='\033[1;32m'
+  BLUE='\033[1;34m'
+  RESET='\033[0m'
+
   dir_pwd=$(pwd)
   cd ~/bash && git pull
   cd "$dir_pwd"
+  echo -e "${BLUE}===> ${GREEN}Updating bash scripts...${RESET}"
 }
 # All the dig info
 function digga() {
