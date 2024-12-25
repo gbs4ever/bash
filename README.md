@@ -13,11 +13,11 @@ as the  subsystem will  disconnect the postgressql server  use `load`  command t
 To use these just  download the repo into your root directory  (~/.bash_profile on mac)
 
 ```cd ~ && git clone   git@github.com:gbs4ever/bash.git``` 
-When you install Oh My Bash, it creates a new .bashrc file in your home directory, potentially overwriting the existing one. This means any custom configurations or environment variables you previously added might be lost ,it  creates a a new .bashrc  so you we need to re add this . 
+When you install Oh My Bash, it creates a new .bashrc file in your home directory, potentially overwriting the existing one. This means any custom configurations or environment variables you previously added might be lost , you we need to re add this type into teminal .
 
 ```nano ~/.bashrc```
 
-Then copy this and add it to the bottom of you bashrc.
+Then copy this and add this close to the bottom of you bashrc.
 
 ```bash 
 for file in ~/bash/.*.sh
