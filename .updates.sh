@@ -15,7 +15,7 @@ upgrade_linux (){
 ### ruby gems update with bundler #####
 function gem_update() {
   echo "Updating gems >>>"
-  logger "running bundle update ........"
+  logger "Running bundle update ........"
   update_output=$(bundle update)
   if [ $? -eq 0 ]; then
     echo "Bundle update completed successfully."

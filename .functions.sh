@@ -23,7 +23,7 @@ function update_bash(){
   dir_pwd=$(pwd)
   cd ~/bash && git pull
   cd "$dir_pwd"
-  echo -e "${BLUE}===> ${GREEN}Updating bash scripts...${RESET}"
+  echo -e "${BLUE}=======> ${GREEN}Updating bash .dot scripts...${RESET}"
 }
 # All the dig info
 function digga() {
