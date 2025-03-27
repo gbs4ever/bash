@@ -1,0 +1,1 @@
+test_migrate = "RAILS_ENV=test rails db:migrate"
