@@ -15,7 +15,7 @@ upgrade_linux (){
 ### ruby gems update with bundler #####
 function gem_update() {
   echo "Updating gems >>>"
-  echo "running bundle update ........"
+  logger "Running bundle update ........"
   update_output=$(bundle update)
   if [ $? -eq 0 ]; then
     echo "Bundle update completed successfully."
@@ -30,7 +30,7 @@ function gem_update() {
     # Commit changes to Gemfile.lock with update output as part of the commit message
     echo "Committing changes..."
     git add Gemfile.lock
-    git commit -m  "Update gems: ${update_output: -50}"
+    git commit -m "Update gems: $(echo "$update_output" | grep -E '^Bundle complete!' | tail -1)"
   
     # Push changes to Git repository
     echo "Pushing changes to Git repository..."
