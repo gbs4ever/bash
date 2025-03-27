@@ -52,7 +52,7 @@ function load() {
         sudo service postgresql restart
     elif [[ $VAR == "hssh" ]]; then
         logger "SSH into Heroku server........"
-        echo "......"
+        logger "============>"
         heroku run bash
     else
         heroku run rails c
