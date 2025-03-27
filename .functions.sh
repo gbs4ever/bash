@@ -44,19 +44,20 @@ mk() {
 
 load(){
 #!/bin/bash
-echo rails server loads
-echo please enter a cmd "(ps/local)"
+
+echo please enter a cmd "(ps/hssh)"
 read VAR
 if [[ $VAR == "ps" ]];
 then 
-echo restating postgress server
+ logger restating postgress server
 sudo service postgresql restart
-elif [[ $VAr == "local" ]];
+elif [[ $VAr == "hssh" ]];
 then
-echo start local heroku server
-heroku local web
+logger SSH into Heroku server .........
+ehco ......
+heroku  run bash 
 else
-heroku run bash  
+heroku run rails c 
 fi
 }
 
