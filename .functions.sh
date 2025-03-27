@@ -1,3 +1,4 @@
+#!/bin/bash
 function touchp() {
   mkdir -p $(dirname $1) && touch "$1"
 }
@@ -42,23 +43,20 @@ mk() {
 }
 
 
-load(){
-#!/bin/bash
+function load() {
+    echo "Please enter a command (ps/hssh):"
+    read VAR
 
-echo please enter a cmd "(ps/hssh)"
-read VAR
-if [[ $VAR == "ps" ]];
-then 
- logger restating postgress server
-sudo service postgresql restart
-elif [[ $VAr == "hssh" ]];
-then
-logger SSH into Heroku server .........
-ehco ......
-heroku  run bash 
-else
-heroku run rails c 
-fi
+    if [[ $VAR == "ps" ]]; then 
+        logger "Restarting PostgreSQL server..."
+        sudo service postgresql restart
+    elif [[ $VAR == "hssh" ]]; then
+        logger "SSH into Heroku server........"
+        echo "......"
+        heroku run bash
+    else
+        heroku run rails c
+    fi
 }
 
 list_shortcuts(){
