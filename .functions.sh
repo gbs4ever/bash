@@ -20,11 +20,15 @@ function update_bash(){
   GREEN='\033[1;32m'
   BLUE='\033[1;34m'
   RESET='\033[0m'
+  RED='\033[1;31m'
 
   dir_pwd=$(pwd)
-  cd ~/bash && git pull
+  cd ~/bash && git pull || { printf "${RED}Error: git pull failed. Aborting.${RESET}\n"; cd "$dir_pwd"; exit 1; }
   cd "$dir_pwd"
-  echo -e "${BLUE}=======> ${GREEN}Updating bash .dot scripts...${RESET}"
+  printf "${BLUE}=======> ${GREEN} Updating bash .dot scripts...........${RESET}\n"
+
+
+
 }
 # All the dig info
 function digga() {
