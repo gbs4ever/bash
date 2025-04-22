@@ -21,7 +21,7 @@ function update_bash(){
   BLUE='\033[1;34m'
   RESET='\033[0m'
   RED='\033[1;31m'
-
+####""
   dir_pwd=$(pwd)
   cd ~/bash && git pull || {
     printf "${RED}Error: git pull failed. Aborting.${RESET}\n"
