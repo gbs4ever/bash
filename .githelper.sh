@@ -9,7 +9,8 @@ alias cg='cd `git rev-parse --show-toplevel`'
 function gd() {
   git difftool $1 -t Kaleidoscope -y
 }
-sync_fork() {
+function sync_fork() {
+  logger "SYNCING FORK......"
   git fetch upstream && git merge upstream/master && git push
 }
 # this caused strange terminal input glitches when written as an alias
