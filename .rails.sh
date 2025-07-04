@@ -20,7 +20,8 @@ function gem_update() {
     # Commit changes to Gemfile.lock with update output as part of the commit message
     echo "Committing changes..."
     git add Gemfile.lock
-    git commit -m "Update gems: $(echo "$update_output" | grep -E '^Bundle complete!' | tail -1)"
+    updated_gems=$(echo "$update_output" | grep -E '^\s+\* ' | tr '\n' ',' | sed 's/,$//')
+    git commit -m "Update gems: $updated_gems"
   
     # Push changes to Git repository
      logger "Pushing changes to Git repository..."
