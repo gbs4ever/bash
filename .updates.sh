@@ -18,29 +18,39 @@ function gem_update() {
   BLUE='\033[1;34m'
   RESET='\033[0m'
   RED='\033[1;31m'
-  echo "Updating gems >>>"
-  printf "${BLUE}=======> ${GREEN} Running bundle update ...................${RESET}\n"
-  update_output=$(bundle update)
-  if [ $? -eq 0 ]; then
-    echo "Bundle update completed successfully."
+
+  echo "Pulling latest changes from Git..."
+  git_output=$(git pull)
+
+  if echo "$git_output" | grep -q "Already up to date."; then
+    printf "${BLUE}=======> ${GREEN} Running bundle update ...................${RESET}\n"
+    update_output=$(bundle update)
+
+    if [ $? -eq 0 ]; then
+      echo "Bundle update completed successfully."
+    else
+      printf "${RED}Error: Bundle update failed.${RESET}\n"
+      return 1
+    fi
+
+    if ! git diff --quiet --exit-code Gemfile.lock; then
+      echo "Running RuboCop..."
+      rubocop -A
+
+      echo "Committing changes..."
+      git add Gemfile.lock
+      commit_message=$(echo "$update_output" | grep -E '^Bundle complete!' | tail -1)
+      git commit -m "Update gems: ${commit_message:-bundle update changes}"
+
+      echo "Pushing changes to Git repository..."
+      git push
+    else
+      echo "No changes to commit. Exiting."
+    fi
   else
-   printf "${RED}Error: Bundle update failed."
+    printf "${RED}Error: Git repo is not up to date. Please pull and resolve manually.\n${RESET}"
+    echo "$git_output"
     return 1
   fi
-  if ! git diff --quiet --exit-code Gemfile.lock; then
-    # Run RuboCop
-    echo "Running RuboCop..."
-    rubocop -A
-    # Commit changes to Gemfile.lock with update output as part of the commit message
-    echo "Committing changes..."
-    git add Gemfile.lock
-    git commit -m "Update gems: $(echo "$update_output" | grep -E '^Bundle complete!' | tail -1)"
-  
-    # Push changes to Git repository
-    echo "Pushing changes to Git repository..."
-    git push
-  else
-    echo "No changes to commit, git exit "
-  fi
-  
 }
+
