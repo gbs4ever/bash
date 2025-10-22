@@ -3,9 +3,10 @@
 # Global colors
 #==============================
 global_variables() {
-  BLUE='\033[1;34m'
-  GREEN='\033[1;32m'
+ GREEN='\033[1;32m'
   RED='\033[1;31m'
+  YELLOW='\033[1;33m'
+  BLUE='\033[1;34m'
   RESET='\033[0m'
 }
 
@@ -19,6 +20,40 @@ update_node() {
   node -v
 }
 
+
+update_npm_packages() {
+  echo "Pulling latest changes from Git..."
+  git_output=$(git pull)
+
+  if echo "$git_output" | grep -q "Already up to date."; then
+    printf "${BLUE}=======> ${GREEN}Updating NPM packages......\n"
+    update_output=$(npm update)
+
+    if [ $? -eq 0 ]; then
+      printf "NPM update completed successfully.\n"
+    else
+      printf "${RED}Error: NPM update failed.${RESET}\n"
+      return 1
+    fi
+
+    if ! git diff --quiet --exit-code package-lock.json; then
+      printf "Committing package-lock.json changes...\n"
+      git add package-lock.json
+      commit_message="Update npm packages"
+      git commit -m "$commit_message"
+
+      printf "Pushing changes to Git repository...\n"
+      git push
+    else
+      printf "${YELLOW}No changes to commit. Exiting.${RESET}\n"
+    fi
+  else
+    printf "${RED}Error: Git repo is not up to date. Please pull and resolve manually.${RESET}\n"
+    echo "$git_output"
+    return 1
+  fi
+    printf "${RESET}"
+}
 #==============================
 # Update Linux packages
 #==============================
