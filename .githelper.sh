@@ -4,7 +4,7 @@ alias gp="g push origin HEAD"
 function gc() {
   git commit -v -a -m "$*"
 }
-alias gh='history|grep'
+alias ghistory='history|grep'
 alias cg='cd `git rev-parse --show-toplevel`'
 function gd() {
   git difftool $1 -t Kaleidoscope -y
