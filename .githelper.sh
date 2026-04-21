@@ -33,5 +33,26 @@ gclone() {
 	git clone "$1" && cd "$(basename "$1" .git)"
 }
 
+import_git_issues() {
+mkdir -p issues
+ logger "SYNCING GITHUB ISSUES......"
+for i in $(gh issue list --state open --json number --jq '.[].number'); do
+  file="issues/issue-$i.md"
+  tmp=$(mktemp)
 
+  gh issue view $i --json number,title,body \
+  --jq '"# Issue \(.number): " + .title + "\n\n" + .body' \
+  > "$tmp"
 
+  if [ ! -f "$file" ]; then
+    mv "$tmp" "$file"
+    echo "Created $file"
+  elif ! cmp -s "$file" "$tmp"; then
+    mv "$tmp" "$file"
+    echo "Updated $file"
+  else
+    rm "$tmp"
+    echo "No change for $file"
+  fi
+done
+}
