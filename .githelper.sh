@@ -47,7 +47,8 @@ for i in $(gh issue list --state open --json number --jq '.[].number'); do
   > "$tmp"
 
   if [ ! -f "$file" ] || ! cmp -s "$file" "$tmp"; then
-    mv "$tmp" "$file"
+    mv "$tmp" "$file" 
+    echo "type yes/no to update $file"
     echo "Updated $file"
   else
     rm "$tmp"
