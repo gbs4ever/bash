@@ -36,23 +36,22 @@ gclone() {
 import_git_issues() {
 mkdir -p issues
  logger "SYNCING GITHUB ISSUES......"
+mkdir -p issues
+
 for i in $(gh issue list --state open --json number --jq '.[].number'); do
   file="issues/issue-$i.md"
-  tmp=$(mktemp)
+  tmp="issues/.issue-$i.tmp"
 
   gh issue view $i --json number,title,body \
   --jq '"# Issue \(.number): " + .title + "\n\n" + .body' \
   > "$tmp"
 
-  if [ ! -f "$file" ]; then
-    mv "$tmp" "$file"
-    echo "Created $file"
-  elif ! cmp -s "$file" "$tmp"; then
+  if [ ! -f "$file" ] || ! cmp -s "$file" "$tmp"; then
     mv "$tmp" "$file"
     echo "Updated $file"
   else
     rm "$tmp"
-    echo "No change for $file"
+    echo "No change $file"
   fi
 done
 }
